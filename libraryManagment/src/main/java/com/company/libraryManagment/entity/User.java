@@ -15,6 +15,7 @@ public class User {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long userId;
 
+    @Column(name = "username")
     private String userName;
     private String password;
     private boolean enabled =true;
@@ -35,4 +36,17 @@ public class User {
 
     @OneToMany(mappedBy = "notificationReceiver")
     private List<Notification> notifications;
+
+    public User(String userName, String password, String email, String firstName,
+                String lastName, String address, String phoneNumber, String city) {
+
+        this.userName = userName;
+        this.password = password;
+        this.email = email;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.address = address;
+        this.phoneNumber = phoneNumber;
+        this.city= city;
+    }
 }

@@ -25,7 +25,7 @@ public class Book {
     private LocalDate startReservationDate;
     private LocalDate endReservationDate;
     private int timeExtended=0;
-    private boolean readyForPickup= false;
+    private boolean readyForPickup = false;
 
     @ManyToOne
     private User reservedByUser;
@@ -38,5 +38,13 @@ public class Book {
         this.title = title;
         this.author = author;
         this.releaseYear = releaseYear;
+    }
+
+    public boolean getReadyForPickup() {
+        return readyForPickup;
+    }
+
+    public void setReadyForPickup(boolean readyForPickup) {
+        this.readyForPickup = readyForPickup;
     }
 }
