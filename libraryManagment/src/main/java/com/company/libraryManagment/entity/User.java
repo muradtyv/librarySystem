@@ -18,8 +18,8 @@ public class User {
     @Column(name = "username")
     private String userName;
     private String password;
-    private boolean enabled =true;
-    private String role = "ROLE_USER";
+    private boolean enabled = true;
+    private String role = "";
 
     private String email;
     private String firstName;
