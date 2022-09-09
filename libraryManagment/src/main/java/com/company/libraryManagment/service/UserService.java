@@ -4,7 +4,6 @@ import com.company.libraryManagment.entity.User;
 import com.company.libraryManagment.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -25,24 +24,48 @@ public class UserService {
     public void insert(User user){
         userRepository.save(user);
     }
-//    public void saveById(Long userId) {
-//        User user = userRepository.findById(userId).get();
-//        userRepository.save(user);
-//    }
+    public void saveById(Long userId) {
+        User user = userRepository.findById(userId).get();
+        userRepository.save(user);
+    }
 
-    public List<User> getFullName(String firstName, String lastName){
-       return userRepository.findByFirstNameAndLastName(firstName,lastName);
-    }
-    public List<User> getByName(String firstName){
-        return userRepository.findByFirstName(firstName);
-    }
-    public List<User> getByLastName(String lastName){
-        return userRepository.findByLastName(lastName);
-    }
     public List<User> userSearcher(String firstName, String lastName){
-        if(firstName != null && lastName != null) return getFullName(firstName,lastName);
-        else if (firstName == null && lastName !=null) return getByLastName(lastName);
-        else if (firstName != null && lastName == null) return getByName(firstName);
-        else return new ArrayList<User>();
+        if (firstName != null && lastName != null) return getByFullName(firstName, lastName);
+        else if (firstName == null && lastName != null) return getByLastName(lastName);
+        else if (firstName != null && lastName == null) return getByFirstName(firstName);
+        return new ArrayList<User>();
     }
+
+    public List<User> getByFirstName(String firstName){
+        List<User> users = new ArrayList<User>();
+        for (User user : userRepository.findAll()) {
+            if (user.getFirstName().toLowerCase().contains(firstName.toLowerCase())) {
+                users.add(user);
+            }
+        }
+        return users;
+    }
+
+    public List<User> getByLastName(String lastName){
+        List<User> users = new ArrayList<User>();
+        for (User user : userRepository.findAll()) {
+            if(user.getLastName().toLowerCase().contains(lastName.toLowerCase())) {
+                users.add(user);
+            }
+        }
+        return users;
+    }
+
+    public List<User> getByFullName(String firstName, String lastName){
+        List<User> users = new ArrayList<User>();
+        for (User user : userRepository.findAll()) {
+            if (user.getFirstName().toLowerCase().contains(firstName.toLowerCase()) &&
+                    user.getLastName().toLowerCase().contains(lastName.toLowerCase())) {
+                users.add(user);
+            }
+        }
+        return users;
+
+    }
+
 }

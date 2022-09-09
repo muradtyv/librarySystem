@@ -12,6 +12,7 @@ import java.time.LocalDate;
 @Setter
 @NoArgsConstructor
 @Entity
+@Table(name = "book")
 public class Book {
 
     @Id

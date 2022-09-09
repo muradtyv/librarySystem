@@ -26,5 +26,6 @@ public class HomeController {
         }else{
             return "redirect:/user";
         }
+
     }
 }
