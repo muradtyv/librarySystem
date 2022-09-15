@@ -1,6 +1,8 @@
 package com.company.libraryManagment;
 
+import com.company.libraryManagment.entity.Book;
 import com.company.libraryManagment.entity.User;
+import com.company.libraryManagment.service.BookService;
 import com.company.libraryManagment.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +21,8 @@ public class LibraryManagmentApplication  {
 		SpringApplication.run(LibraryManagmentApplication.class, args);
 
 	}
+//	@Autowired
+//	BookService bookService;
 
 //	@Autowired
 //	UserService usService;
@@ -36,6 +40,12 @@ public class LibraryManagmentApplication  {
 //			user1.setRole("ROLE_ADMIN");
 //
 //			usService.insert(user1);
+//	Book book1 = new Book("The Clean Coder", "Robert Martin", 2021, 3);
+//	Book book2 = new Book("Clean Code", "Robert C. Martin", 2020, 2);
+//	bookService.save(book1);
+//			bookService.save(book2);
+
+
 //		};
 //	}
 }

@@ -103,7 +103,7 @@
 					<th>Title</th>
 					<th>Author</th>
 					<th>Release Year</th>
-					<th>Edition</th>
+<!--					<th>Edition</th>-->
 					<th>Return Date</th>
 					<th>Fine</th>
 					<th style="width: 125px">Select Book</th>
@@ -112,7 +112,7 @@
 					<td th:text="${book.key.title}"></td>
 					<td th:text="${book.key.author}"></td>
 					<td th:text="${book.key.releaseYear}"></td>
-					<td th:text="${book.key.edition}"></td>
+<!--					<td th:text="${book.key.edition}"></td>-->
 					<td th:text="${book.key.returnDate}"></td>
 					<td>
 						<text th:if="${book.value > 0}" th:text="${'$ ' + book.value}" style="color: red"></text>
@@ -138,7 +138,7 @@
 					<th>Title</th>
 					<th>Author</th>
 					<th>Release Year</th>
-					<th>Edition</th>
+<!--					<th>Edition</th>-->
 					<th>Return Date</th>
 					<th>Fine</th>
 					<th style="width: 150px">Remove</th>
@@ -147,7 +147,7 @@
 					<td th:text="${selectedBook.key.title}"></td>
 					<td th:text="${selectedBook.key.author}"></td>
 					<td th:text="${selectedBook.key.releaseYear}"></td>
-					<td th:text="${selectedBook.key.edition}"></td>
+<!--					<td th:text="${selectedBook.key.edition}"></td>-->
 					<td th:text="${selectedBook.key.returnDate}"></td>
 					<td th:text="${'$ ' + selectedBook.value}">
 					<td>

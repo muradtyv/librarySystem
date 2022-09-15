@@ -7,6 +7,7 @@
 </head>
 <body>
 <ul th:replace="page-layout :: employeeNavBar"></ul>
+
 	<div class="container">
 		<h3>Catalog</h3>
 		
@@ -48,7 +49,7 @@
 				<th>Title</th>
 				<th>Author</th>
 				<th>Release Year</th>
-				<th>Edition</th>
+<!--				<th>Edition</th>-->
 				<th>Return Date</th>
 				<th>Reserved From</th>
 				<th>Reserved Until</th>
@@ -58,7 +59,7 @@
 				<td th:text="${book.title}"></td>
 				<td th:text="${book.author}"></td>
 				<td th:text="${book.releaseYear}"></td>
-				<td th:text="${book.edition}"></td>
+<!--				<td th:text="${book.edition}"></td>-->
 				<td th:text="${book.returnDate}"></td>
 				<td th:text="${book.startReservationDate}"></td>
 				<td th:text="${book.endReservationDate}"></td>

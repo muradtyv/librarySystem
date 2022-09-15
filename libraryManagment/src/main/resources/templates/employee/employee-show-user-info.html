@@ -97,7 +97,7 @@
 				<th>Title</th>
 				<th>Author</th>
 				<th>Release Year</th>
-				<th>Edition</th>
+<!--				<th>Edition</th>-->
 				<th>Return Date</th>
 				<th>Fine</th>
 			</tr>
@@ -105,7 +105,7 @@
 				<td th:text="${book.key.title}"></td>
 				<td th:text="${book.key.author}"></td>
 				<td th:text="${book.key.releaseYear}"></td>
-				<td th:text="${book.key.edition}"></td>
+<!--				<td th:text="${book.key.edition}"></td>-->
 				<td th:text="${book.key.returnDate}"></td>
 				<td th:if="${book.value > 0}" style="color:red" th:text="${'$ ' + book.value}"></td>
 				<td th:if="${book.value == 0}" th:text="${'$ ' + book.value}"></td>
@@ -123,7 +123,7 @@
 				<th>Title</th>
 				<th>Author</th>
 				<th>Release Year</th>
-				<th>Edition</th>
+<!--				<th>Edition</th>-->
 				<th>Reserved from</th>
 				<th>Reserved until</th>	
 			</tr>
@@ -131,7 +131,7 @@
 				<td th:text="${book.title}"></td>
 				<td th:text="${book.author}"></td>
 				<td th:text="${book.releaseYear}"></td>
-				<td th:text="${book.edition}"></td>
+<!--				<td th:text="${book.edition}"></td>-->
 				<td th:text="${book.startReservationDate}"></td>
 				<td th:text="${book.endReservationDate}"></td>
 			</tr>

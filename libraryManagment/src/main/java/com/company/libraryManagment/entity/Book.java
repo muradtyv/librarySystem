@@ -22,6 +22,7 @@ public class Book {
     private String title;
     private String author;
     private int releaseYear;
+//    private int edition;
     private LocalDate returnDate = null;
     private LocalDate startReservationDate;
     private LocalDate endReservationDate;

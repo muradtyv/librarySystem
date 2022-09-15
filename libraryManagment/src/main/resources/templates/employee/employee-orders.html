@@ -111,14 +111,14 @@
 						<th>Title</th>
 						<th>Author</th>
 						<th>Release Year</th>
-						<th>Edition</th>
+<!--						<th>Edition</th>-->
 						<th style="width: 200px">Remove from List</th>
 					</tr>
 					<tr th:each="book : ${selectedBookObjects}">
 						<td th:text=${book.title}></td>
 						<td th:text="${book.author}"></td>
 						<td th:text="${book.releaseYear}"></td>
-						<td th:text="${book.edition}"></td>
+<!--						<td th:text="${book.edition}"></td>-->
 						<td>
 							<form>
 								<input type="submit" value="Remove" class="table" style="background-color:red; width: 195px">
@@ -174,7 +174,7 @@
 						<th>Title</th>
 						<th>Author</th>
 						<th>Release Year</th>
-						<th>Edition</th>
+<!--						<th>Edition</th>-->
 						<th>Return Date</th>
 						<th>Reserved Until</th>
 						<th style="width: 200px">Select</th>
@@ -183,7 +183,7 @@
 						<td th:text="${searchedBook.title}"></td>
 						<td th:text="${searchedBook.author}"></td>
 						<td th:text="${searchedBook.releaseYear}"></td>
-						<td th:text="${searchedBook.edition}"></td>
+<!--						<td th:text="${searchedBook.edition}"></td>-->
 						<td th:text="${searchedBook.returnDate}"></td>
 						<td th:text="${searchedBook.endReservationDate}"></td>
 						<td>
