@@ -34,7 +34,7 @@ public class SecurityController {
 	@PostMapping(value="/register/save")
 	public String saveNewAccount(User account) {
 		account.setPassword(account.getPassword());
-//		accService.insert(account);
+		accService.insert(account);
 		return "redirect:/register/accountcreated";
 	}
 	

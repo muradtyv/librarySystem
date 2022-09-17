@@ -18,7 +18,7 @@
 					<th>Title</th>
 					<th>Author</th>
 					<th>Release Year</th>
-					<th>Edition</th>
+<!--					<th>Edition</th>-->
 					<th>Reservation Period</th>
 					<th>Remove From List</th>
 				</tr>
@@ -26,7 +26,7 @@
 					<td th:text="${resBook.key.title}"></td>
 					<td th:text="${resBook.key.author}"></td>
 					<td th:text="${resBook.key.releaseYear}"></td>
-					<td th:text="${resBook.key.edition}"></td>
+<!--					<td th:text="${resBook.key.edition}"></td>-->
 					<td th:text="${resBook.value}"></td>
 					<td style="width: 100px">
 						<form action="/user/browsebooks">
@@ -103,7 +103,7 @@
 					<th>Title</th>
 					<th>Author</th>
 					<th>Release Year</th>
-					<th>Edition</th>
+<!--					<th>Edition</th>-->
 					<th>Return Date</th>
 					<th>End Reservation Date</th>
 					<th style="width: 100px">Reserve</th>
@@ -112,7 +112,7 @@
 					<td th:text="${book.title}"></td>
 					<td th:text="${book.author}"></td>
 					<td th:text="${book.releaseYear}"></td>
-					<td th:text="${book.edition}"></td>
+<!--					<td th:text="${book.edition}"></td>-->
 					<td th:text="${book.returnDate}"></td>
 					<td th:text="${book.endReservationDate}"></td>
 					<td th:if="${book.endReservationDate == null && userHasFine == false}">
@@ -136,9 +136,6 @@
 				
 			</table> 
 		</div>
-		
-		
-		
 	</div>
 </body>
 </html>
