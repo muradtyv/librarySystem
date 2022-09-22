@@ -75,19 +75,24 @@ public class BookService {
     }
 //    convert?
     public List<Book> convertIdsCollectionToBooksList(Collection<Long> bookIds){
-        List<Book> books = new ArrayList<Book>();
-        for (Long bookId : bookIds) books.add(bookRepository.findById(bookId).get());
+        List<Book> books = new ArrayList<>();
+        for (Long bookId : bookIds){
+            books.add(bookRepository.findById(bookId).get());
+        }
         return books;
     }
 
     public void removeCurrentUserOfMultipleBooks(List<Book> books){
-        for(Book book: books) removeCurrentUserOfBook(book);
+        for(Book book: books) {
+            removeCurrentUserOfBook(book);
+        }
     }
 
     public void removeCurrentUserOfBook(Book book){
         User currentUser = book.getTheUser();
-        for(int i =0;i < currentUser.getBooks().size();i++){
-            if(currentUser.getBooks().get(i).getBookId() == book.getBookId()){
+        List<Book> currentUserBooks = currentUser.getBooks();
+        for(int i =0; i < currentUserBooks.size(); i++){
+            if(currentUserBooks.get(i).getBookId() == book.getBookId()){
                 currentUser.getBooks().remove(i);
                 break;
             }
@@ -102,8 +107,9 @@ public class BookService {
 
     public void removeReservation(Book book){
         User reservedUser = book.getReservedByUser();
-        for(int i =0; i< reservedUser.getReservedBooks().size();i++){
-            if(reservedUser.getReservedBooks().get(i).getBookId() == book.getBookId()){
+        List<Book> reservedUserBooks = reservedUser.getReservedBooks();
+        for(int i =0; i< reservedUserBooks.size();i++){
+            if(reservedUserBooks.get(i).getBookId() == book.getBookId()){
                 reservedUser.getReservedBooks().remove(i);
                 break;
             }

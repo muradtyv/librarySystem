@@ -6,6 +6,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -66,6 +67,10 @@ public class UserService {
         }
         return users;
 
+    }
+
+    public Optional<User> getByUsername(User user){
+        return userRepository.findByUserName(user.getUserName());
     }
 
 }
