@@ -42,11 +42,11 @@ public class Book {
         this.releaseYear = releaseYear;
     }
 
-    public boolean getReadyForPickup() {
-        return readyForPickup;
-    }
-
-    public void setReadyForPickup(boolean readyForPickup) {
-        this.readyForPickup = readyForPickup;
-    }
+//    public boolean getReadyForPickup() {
+//        return readyForPickup;
+//    }
+//
+//    public void setReadyForPickup(boolean readyForPickup) {
+//        this.readyForPickup = readyForPickup;
+//    }
 }

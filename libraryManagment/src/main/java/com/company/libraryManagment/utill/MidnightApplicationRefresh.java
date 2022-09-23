@@ -25,7 +25,6 @@ public class MidnightApplicationRefresh {
 	
 		//Removes overdue reservations and notifications.
 		public void midnightApplicationRefresher() {
-			
 			for (Book book : bookService.getAll()) {
 				if (book.getEndReservationDate() != null) {
 					if (book.getEndReservationDate().compareTo(LocalDate.now()) == -1) {

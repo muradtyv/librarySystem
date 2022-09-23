@@ -4,6 +4,7 @@ import com.company.libraryManagment.entity.Book;
 import com.company.libraryManagment.security.CurrentUserFinder;
 import com.company.libraryManagment.service.BookService;
 import com.company.libraryManagment.service.UserService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -14,23 +15,18 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 
 @Component
+@RequiredArgsConstructor
 public class DateTracker {
 
-    @Autowired
-    BookService bookService;
+   private final BookService bookService;
 
-    @Autowired
-    CurrentUserFinder currentUserFinder;
+    private final CurrentUserFinder currentUserFinder;
 
-    @Autowired
-    UserService userService;
+    private final UserService userService;
 
-    private LocalDate now =LocalDate.now();
+//    private LocalDate now = LocalDate.now();
 
 
-//    public LocalDate getNow(){
-//        return this.now;
-//    }
 
     public long differenceDays(LocalDate date){
         return ChronoUnit.DAYS.between(date, LocalDate.now());
@@ -93,7 +89,7 @@ public class DateTracker {
     }
 
     public int getWeeksToExtendReturnDate(Book book){
-        long daysTooLate =daysTooLate(book.getReturnDate());
+        long daysTooLate = daysTooLate(book.getReturnDate());
 
         int weeksToExtend;
 
@@ -108,10 +104,10 @@ public class DateTracker {
     }
 
     public Map<Book, String> listedBookReservations(Collection<Long> bookIdList){
-        Map<Book, String> listedBookReservations= new LinkedHashMap<Book,String>();
+        Map<Book, String> listedBookReservations = new LinkedHashMap<>();
 
         for(Long bookId: bookIdList){
-            Book reservedBookObject =bookService.getById(bookId);
+            Book reservedBookObject = bookService.getById(bookId);
             String reservationDates = getReservationDatesInString(reservedBookObject);
             listedBookReservations.put(reservedBookObject,reservationDates);
         }

@@ -25,9 +25,6 @@ public class SecurityController {
 
 	private final UserService accService;
 
-	private final UserPrincipalDetailsService userPrincipalDetailsService;
-
-
 
 	@GetMapping(value="/login")
 	public String login() {
